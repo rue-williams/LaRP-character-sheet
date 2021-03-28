@@ -1,9 +1,25 @@
-## Making a plan
-1) Make a drawing of your app. Simple "wireframes"
-2) Once you have a drawing, name the HTML elements you'll need to realize your vision
-3) For each HTML element ask: Why do I need this?
-    - This is your pseudocode
-4) Once we know _why_ we need each element, think about how to implement the "Why" as a "How"
-5) Is there some state we need to initialize?
-6) Find all the 'events' (user clicks, form submit, etc) in your app. Ask one by one, "What happens when" for each of these events.
-7) Think about how to validate each of your steps
+# Character sheet for LaRP-22
+## Name and Pronouns
+
+## Stats
+The three stats are:
+- BODY
+- HEART
+- MIND
+
+You have 2 stat points you can assign. Additionally, you can borrow a point from a stat and add it to another. 
+
+(example: +2 BODY, -1 HEART, +1 MIND)
+## Description
+What are your external characterisics & mannerisms? What does your outfit look like? What do you smell like?
+## Background
+Where did you come from?
+## Inventory
+What's in your bag and pockets?
+## Skills
+What are you good at?
+## Bonds
+How are you connected to others?
+## Relationships
+Who are you connected to?
+
