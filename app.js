@@ -6,7 +6,7 @@ const statModHeart = document.getElementById('heart-mod-id');
 const statModMind = document.getElementById('mind-mod-id');
 const description = document.getElementById('desc-id');
 const background = document.getElementById('background-id');
-const inventory = document.getElementById('inventory-list-id')
+const inventory = document.getElementById('inventory-list-id');
 
 const kal = {
     'charName': 'Kal(vin)',
