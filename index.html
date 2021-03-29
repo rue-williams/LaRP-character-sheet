@@ -13,25 +13,35 @@
 
 <body>
     <main class="container">
-        <header>
+        <header class="bottom-border">
             <img id="logo" src="./assets/logo.png" alt="black library logo" height="75px">    
-            <div class="name-tag"><span id="name-id" class="name">Character Name</span>
+            <div class="name-tag center"><span id="name-id" class="name">Character Name</span>
             <span id="pronoun-id" class="pronoun">pronouns</span>
             </div>
         </header>
-        <section class="skills" id="skills-id">
-            <div id="body-skill-id">
-                <span>BODY: </span><span id="body-mod-id">0</span>
+        <section class="group stats bottom-border" id="stats-id">
+            <div id="body-stat-id">
+                <h4>BODY: </h4><h4 id="body-mod-id">0</h4>
             </div>
-            <div id="heart-skill-id">
-                <span>HEART: </span><span id="heart-mod-id">0</span>
+            <div id="heart-stat-id">
+                <h4>HEART: </h4><h4 id="heart-mod-id">0</h4>
             </div>
-            <div id="mind-skill-id">
-                <span>MIND: </span><span id="mind-mod-id">0</span>
+            <div id="mind-stat-id">
+                <h4>MIND: </h4><h4 id="mind-mod-id">0</h4>
             </div>
         </section>
-        <section class="desc-text" id="desc-id"></section>
-        <section class="desc-text" id="background-id"></section>
+        <section class="group bottom-border">
+            <h4>Description:</h4>
+            <div id="desc-id"></div>
+        </section>
+        <section class="group bottom-border">
+            <h4>Background:</h4>
+            <div id="background-id"></div>
+        </section>
+        <section class="group">
+            <h4>Inventory:</h4>
+            <ul id="inventory-list-id"></ul>
+        </section>
     </main>
     <script type="module" src="app.js"></script>
 </body>
