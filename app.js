@@ -7,6 +7,9 @@ const statModMind = document.getElementById('mind-mod-id');
 const description = document.getElementById('desc-id');
 const background = document.getElementById('background-id');
 const inventory = document.getElementById('inventory-list-id');
+const skills = document.getElementById('skill-list-id');
+const relationships = document.getElementById('relationship-list-id');
+const bonds = document.getElementById('bond-list-id');
 
 const kal = {
     'charName': 'Kal(vin)',
@@ -81,24 +84,50 @@ const kal = {
     ]
 };
 
-// set event listeners to update state and DOM
-charName.textContent = kal.charName;
-charPronouns.textContent = kal.charPronouns;
-statModBody.textContent = kal.statModBody;
-statModHeart.textContent = kal.statModHeart;
-statModMind.textContent = kal.statModMind;
-description.textContent = kal.description;
-background.textContent = kal.background;
+const elements = [
+    charName, charPronouns, statModBody, statModHeart, statModMind, description, background
+];
 
+function syncEls(char, el) {
+    let i = 0;
+    for (const key in char) {
+        if (el[i]) {
+            el[i].textContent = char[key];
+        } else {
+            break;
+        }
+        i++;
+    }
+    listItems(char.inventory, inventory);
+    listItems(arrayToObject(char.skills), skills);
+    listItems(arrayToObject(char.relationships), relationships);
+    listItems(arrayToObject(char.bonds), bonds);
+}
 
-function listItems(char, listElement) {
-    for (let i = 0; i < char.inventory.length; i++) {
-        const item = char.inventory[i];
+function arrayToObject(arr) {
+    const objArray = [];
+    for (let i = 0; i < arr.length; i++) {
+        const el = arr[i];
+        objArray.push(flattenObj(el));
+    }
+    return objArray;
+}
+
+function listItems(arr, listElement) {
+    for (let i = 0; i < arr.length; i++) {
         const newItem = document.createElement('li');
-        newItem.textContent = item;
+        newItem.textContent = arr[i];
         listElement.appendChild(newItem);
     }
 }
 
-listItems(kal, inventory);
+function flattenObj(obj) {
+    const output = [];
+    for (const key in obj) {
+        output.push(obj[key]);
+    }
+    return output[0] + ': ' + output[1];
+}
+
+syncEls(kal, elements);
 

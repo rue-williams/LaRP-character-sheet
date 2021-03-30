@@ -1,14 +1,5 @@
-header {
-    margin-bottom: 5px;
-    display: flex;
-    padding: 0px 10px 5px;
-}
-
-.bottom-border {
-    border-bottom: 2px solid black;
-}
-
-.container {
+main {
+    box-sizing: content-box;
     max-width: 750px;
     margin: 10px auto;
     padding: 5px;
@@ -16,6 +7,19 @@ header {
     border-radius: 25px;
     box-shadow: 2px 5px  5px rgba(0, 0, 0, .3);
     font-family: 'Bangers', cursive;
+}
+
+header {
+    margin: 0px 5% 5px;
+    display: flex;
+    padding: 0px 10px 5px;
+}
+
+footer {
+    height: 5px;
+    text-align: right;
+    font-size: .66rem;
+    padding-right: 7%;
 }
 
 .name-tag {
@@ -30,7 +34,7 @@ header {
     font-size: 2.5rem;
 }
 
-span.pronoun {
+.name-tag span.pronoun {
     font-size: 1.5rem;
 }
 
@@ -45,6 +49,10 @@ span.pronoun {
     border: 2px solid black;
     border-radius: 25px;
     padding: 5px 10px;
+}
+
+.bottom-border {
+    border-bottom: 2px solid black;
 }
 
 .group {
@@ -64,16 +72,15 @@ span.pronoun {
 }
 
 .group ul {
-    column-count: 3;
-    border: 1px solid #ddd;
+    column-count: 4;
+    /* border: 1px solid #ddd; */
 }
 
-ul li {
+li {
     font-size: .66rem;
     padding: 2px 10px;
-    border-bottom: 1px solid #ddd;
 }
   
-ul li:last-child {
+/* ul li:last-child {
     border-bottom: none
-}
+} */
