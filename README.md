@@ -7,7 +7,11 @@ The three stats are:
 - HEART
 - MIND
 
-You have 2 stat points you can assign. Additionally, you can borrow a point from a stat and add it to another. 
+You have 2 stat points you can assign. 
+
+(example: +2 BODY, 0 HEART, 0 MIND)
+
+Additionally, you can borrow a point from a stat and add it to another. 
 
 (example: +2 BODY, -1 HEART, +1 MIND)
 ## Description
