@@ -112,8 +112,8 @@ const dee = {
     ],
     'bonds': [
         {
-            'name': 'Joseph McGinty',
-            'connection': 'Adopted HeeHobs from him' 
+            'name': 'NPC #1',
+            'connection': 'TBD' 
         },
         {
             'name': 'PC #1',
