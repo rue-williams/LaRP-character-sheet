@@ -16,11 +16,20 @@ header {
 }
 
 footer {
-    height: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    height: 20px;
     text-align: right;
     font-size: .66rem;
-    padding-right: 7%;
+    margin: 0px auto 5px;
 }
+
+footer select {
+    font-size: .66rem;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
 
 .name-tag {
     display: flex;

@@ -16,7 +16,7 @@
         <header class="bottom-border">
             <img id="logo" src="./assets/logo.png" alt="black library logo" height="75px">    
             <div class="name-tag center"><span id="name-id" class="name">Character Name</span>
-            <span id="pronoun-id" class="pronoun">pronouns</span>
+                <span id="pronoun-id" class="pronoun">pronouns</span>
             </div>
         </header>
         <section class="group stats bottom-border" id="stats-id">
@@ -55,7 +55,17 @@
             <ol id="bond-list-id"></ol>
         </section>
     </main>
-    <footer>Larp Character sheet 2021</footer>
+    <footer>
+    <label for="char-select">Choose a character:
+        <select name="characters" id="char-select">
+            <option value="">--Please choose a character--</option>
+            <option value="kal">Kal</option>
+            <option value="dee">Mel</option>
+            <option value="anthony">Ant</option>
+        </select>
+    </label>    
+    Larp Character sheet 2021
+    </footer>
     <script type="module" src="app.js"></script>
 </body>
 
