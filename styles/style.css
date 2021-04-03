@@ -6,6 +6,10 @@ main {
     border: 5px solid black;
     border-radius: 25px;
     box-shadow: 2px 5px  5px rgba(0, 0, 0, .3);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.banger-font {
     font-family: 'Bangers', cursive;
 }
 
@@ -80,7 +84,7 @@ footer select {
 }
 
 .group div {
-    font-size: .80rem;
+    font-size: .66rem;
     padding-left: 10px;
 }
 
