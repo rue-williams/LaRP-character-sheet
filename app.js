@@ -152,37 +152,35 @@ const dee = {
     ]
 };
 const anthony = {
-    'charName': 'TBD',
-    'charPronouns': 'TBD',
+    'charName': 'Chadtholomew',
+    'charPronouns': 'He/Him',
     'statModBody': 1,
     'statModHeart': 2,
     'statModMind': -1,
-    'description': 'TBD',
-    'background': {
-        'summary': 'TBD'
-    },
+    'description': 'A man in his late thirties, wearing a tuxedo that’s just a little too big and hasn’t seen a dry-cleaner since before-times. His dark hair is impeccably styled with a face covered with stage makeup. His grin seems to enter a room first. Fingernails although dirty are kept trimmed.',
+    'background': 'Chadtholomew spent most of his life adjacent to the lap of luxury. Always performing for those more privileged, but somewhat unaware of his un-importance to their lives. As Chadth saw it, providing music to all enhanced the lives of everyone around him. Due to this he can be quite naive to the ways of the world, especially once it collapsed. When the world first started to disintegrate he became a full-time live-in lounge pianist/singer in the bunker belonging to the former CEO of a tech company, playing day and night for the wealthy who refused to recognize the world had moved on. Once the food in the bunker had run out, Chadth saw the wealthy’s new society collapse into madness and greedy despair. He escaped unscathed due to always being seen as an extension of the decor to those around him. He discovered that the world had changed much more than he realized, and found himself for the first time unsure of where his next meal would come from.',
     'skills': [
         {
-            'name': 'skill 1',
+            'name': 'Musical Entertainment',
             'level': 1
         },
         {
-            'name': 'skill 2',
+            'name': 'Schmoozing',
             'level': 1
         }
     ],
     'bonds': [
         {
             'name': 'NPC #1',
-            'connection': 'TBD' 
+            'connection': 'TBD'
         },
         {
             'name': 'PC #1',
-            'connection': 'TBD' 
+            'connection': 'TBD'
         },
         {
             'name': 'PC #2',
-            'connection': 'TBD' 
+            'connection': 'TBD'
         }
     ],
     'relationships': [
@@ -200,9 +198,9 @@ const anthony = {
         }
     ],
     'inventory': [
-        'item 1',
-        'item 2',
-        'item 3'
+        'Pitch pipe',
+        'Shoe horn',
+        'Pocket square'
     ]
 };
 
