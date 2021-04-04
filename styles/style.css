@@ -6,11 +6,7 @@ main {
     border: 5px solid black;
     border-radius: 25px;
     box-shadow: 2px 5px  5px rgba(0, 0, 0, .3);
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.banger-font {
-    font-family: 'Bangers', cursive;
+    font-family: Helvetica, Arial, sans-serif;
 }
 
 header {
@@ -29,11 +25,11 @@ footer {
 }
 
 footer select {
+    width: fit-content;
     font-size: .66rem;
     border: none;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid black
 }
-
 
 .name-tag {
     display: flex;
@@ -64,8 +60,17 @@ footer select {
     padding: 5px 10px;
 }
 
+.banger-font {
+    font-family: 'Bangers', cursive;
+}
+
 .bottom-border {
     border-bottom: 2px solid black;
+}
+
+.dark-mode, .dark-mode input, .dark-mode select {
+    background-color: #272727;
+    color: slategray;
 }
 
 .hidden {
@@ -85,7 +90,7 @@ footer select {
 
 .group div {
     font-size: .66rem;
-    padding-left: 10px;
+    padding: 0px 10px;
 }
 
 .group ul {

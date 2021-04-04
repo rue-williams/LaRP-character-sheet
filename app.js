@@ -13,6 +13,8 @@ const skills = document.getElementById('skill-list-id');
 const relationships = document.getElementById('relationship-list-id');
 const bonds = document.getElementById('bond-list-id');
 const selectList = document.getElementById('char-select');
+const colorSwapButton = document.getElementById('color-swap-button');
+
 
 //elements to populate with character data
 const elements = [
@@ -204,21 +206,21 @@ const anthony = {
     ]
 };
 
-function arrayToObject(arr) {
-    const objArray = [];
+function objToArray(arr) {
+    const objects = [];
     for (let i = 0; i < arr.length; i++) {
         const el = arr[i];
-        objArray.push(flattenObj(el));
+        objects.push(flattenObj(el));
     }
-    return objArray;
+    return objects;
 }
 
 function flattenObj(obj) {
-    const output = [];
+    const out = [];
     for (const key in obj) {
-        output.push(obj[key]);
+        out.push(obj[key]);
     }
-    return output[0] + ': ' + output[1];
+    return out[0] + ': ' + out[1];
 }
 
 
@@ -261,21 +263,20 @@ function syncEls(char, el) {
     }
     clearItems();
     listItems(char.inventory, inventory);
-    listItems(arrayToObject(char.skills), skills);
-    listItems(arrayToObject(char.relationships), relationships);
-    listItems(arrayToObject(char.bonds), bonds);
+    listItems(objToArray(char.skills), skills);
+    listItems(objToArray(char.relationships), relationships);
+    listItems(objToArray(char.bonds), bonds);
 }
 
-function hideObject(button, el) {
+function toggleClass(button, el, tag) {
     button.addEventListener('click', () => {
-        if (el.classList.contains('hidden')) {
-            el.classList.remove('hidden');
+        if (el.classList.contains(tag)) {
+            el.classList.remove(tag);
         } else {
-            el.classList.add('hidden');
+            el.classList.add(tag);
         }
     });
 }
-
 
 selectList.addEventListener('change', () => {
     switch (selectList.value) {
@@ -296,5 +297,6 @@ selectList.addEventListener('change', () => {
     }
 });
 
-hideObject(descHeader, description);
-hideObject(backHeader, background);
+toggleClass(descHeader, description, 'hidden');
+toggleClass(backHeader, background, 'hidden');
+toggleClass(colorSwapButton, document.body, 'dark-mode');
