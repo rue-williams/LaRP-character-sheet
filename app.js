@@ -1,3 +1,6 @@
+//import utility functions
+import { objToArray, listItems, clearItems, toggleClass, populate, getBackground } from './utilities.js';
+
 // grab ids and stuff them into vars, gently
 const charName = document.getElementById('name-id');
 const charPronouns = document.getElementById('pronoun-id');
@@ -5,21 +8,16 @@ const statModBody = document.getElementById('body-mod-id');
 const statModHeart = document.getElementById('heart-mod-id');
 const statModMind = document.getElementById('mind-mod-id');
 const description = document.getElementById('desc-id');
-const descHeader = document.getElementById('desc-h4-id');
 const background = document.getElementById('background-id');
-const backHeader = document.getElementById('back-h4-id');
+
 const inventory = document.getElementById('inventory-list-id');
 const skills = document.getElementById('skill-list-id');
 const relationships = document.getElementById('relationship-list-id');
 const bonds = document.getElementById('bond-list-id');
-const selectList = document.getElementById('char-select');
-const colorSwapButton = document.getElementById('color-swap-button');
-
 
 //elements to populate with character data
-const elements = [
-    charName, charPronouns, statModBody, statModHeart, statModMind, description
-];
+const elements = [charName, charPronouns, statModBody, statModHeart, statModMind, description];
+const lists = [inventory, skills, bonds, relationships];
 
 //character objects
 const kal = {
@@ -206,77 +204,26 @@ const anthony = {
     ]
 };
 
-function objToArray(arr) {
-    const objects = [];
-    for (let i = 0; i < arr.length; i++) {
-        const el = arr[i];
-        objects.push(flattenObj(el));
-    }
-    return objects;
-}
-
-function flattenObj(obj) {
-    const out = [];
-    for (const key in obj) {
-        out.push(obj[key]);
-    }
-    return out[0] + ': ' + out[1];
-}
-
-
-//list out character arrays
-function listItems(arr, listElement) {
-    for (let i = 0; i < arr.length; i++) {
-        const newItem = document.createElement('li');
-        newItem.textContent = arr[i];
-        listElement.appendChild(newItem);
-    }
-}
-
-//function to initalize an empty list before listing out character items
-function clearItems() {
-    inventory.innerHTML = '';
-    skills.innerHTML = '';
-    bonds.innerHTML = '';
-    relationships.innerHTML = '';
-}
-
 function syncEls(char, el) {
     let i = 0;
     for (const key in char) {
         if (el[i]) {
-            el[i].textContent = char[key];
+            populate(el[i], char[key]);
         } else {
             break;
         }
         i++;
-    }   
-    background.textContent = char.background.summary;
-    if (char.background.more) {
-        const link = document.createElement('a');
-        link.href = char.background.more;
-        link.textContent = 'Read More';
-        link.target = '_blank';
-        background.appendChild(document.createElement('br'));
-        background.appendChild(document.createElement('br'));
-        background.appendChild(link);
     }
-    clearItems();
+       
+    getBackground(char, background);
+    clearItems(lists);
     listItems(char.inventory, inventory);
     listItems(objToArray(char.skills), skills);
     listItems(objToArray(char.relationships), relationships);
     listItems(objToArray(char.bonds), bonds);
 }
 
-function toggleClass(button, el, tag) {
-    button.addEventListener('click', () => {
-        if (el.classList.contains(tag)) {
-            el.classList.remove(tag);
-        } else {
-            el.classList.add(tag);
-        }
-    });
-}
+const selectList = document.getElementById('char-select');
 
 selectList.addEventListener('change', () => {
     switch (selectList.value) {
@@ -296,6 +243,10 @@ selectList.addEventListener('change', () => {
             break;
     }
 });
+
+const colorSwapButton = document.getElementById('color-swap-button');
+const descHeader = document.getElementById('desc-h4-id');
+const backHeader = document.getElementById('back-h4-id');
 
 toggleClass(descHeader, description, 'hidden');
 toggleClass(backHeader, background, 'hidden');

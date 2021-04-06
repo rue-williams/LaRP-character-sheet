@@ -8,6 +8,23 @@ export function objToArray(arr) {
     return objects;
 }
 
+export function populate(el, content) {
+    el.textContent = content;
+}
+
+export function getBackground(char, el) {
+    populate(el, char.background.summary);
+    if (char.background.more) {
+        const link = document.createElement('a');
+        link.href = char.background.more;
+        link.textContent = 'Read More';
+        link.target = '_blank';
+        el.appendChild(document.createElement('br'));
+        el.appendChild(document.createElement('br'));
+        el.appendChild(link);
+    }
+}
+
 function flattenObj(obj) {
     const out = [];
     for (const key in obj) {
@@ -25,15 +42,10 @@ export function listItems(arr, listElement) {
     }
 }
 
-export function syncEls(char, el) {
-    let i = 0;
-    for (const key in char) {
-        if (el[i]) {
-            el[i].textContent = char[key];
-        } else {
-            break;
-        }
-        i++;
+//function to initalize an empty list before listing out character items
+export function clearItems(list) {
+    for (let i = 0; i < list.length; i++) {
+        list[i].innerHTML = '';
     }
 }
 
