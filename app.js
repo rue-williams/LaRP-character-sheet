@@ -1,36 +1,15 @@
 //import utility functions
-import { objToArray, listItems, clearItems, toggleClass, populate, getBackground } from './utilities.js';
-
-// grab ids and stuff them into vars, gently
-const charName = document.getElementById('name-id');
-const charPronouns = document.getElementById('pronoun-id');
-const statModBody = document.getElementById('body-mod-id');
-const statModHeart = document.getElementById('heart-mod-id');
-const statModMind = document.getElementById('mind-mod-id');
-const description = document.getElementById('desc-id');
-const background = document.getElementById('background-id');
-
-const inventory = document.getElementById('inventory-list-id');
-const skills = document.getElementById('skill-list-id');
-const relationships = document.getElementById('relationship-list-id');
-const bonds = document.getElementById('bond-list-id');
-
-//elements to populate with character data
-const elements = [charName, charPronouns, statModBody, statModHeart, statModMind, description];
-const lists = [inventory, skills, bonds, relationships];
+import { objToArray, listItems, clearItems, toggleClass, getBasicInfo, getBackground } from './utilities.js';
 
 //character objects
 const kal = {
     'charName': 'Kal(vin)',
-    'charPronouns': 'she/they/he',
+    'charPronouns': 'she/they',
     'statModBody': 1,
     'statModHeart': 0,
     'statModMind': 1,
     'description': "Dark brown eyes and a crooked smile might be the first things you notice about Kal. She stands at about 5'7\", with strawberry blonde hair that's either under a hat or has at least two different kinds of organic detritus in it. Her face is stained with dirt, grass, sweat and... probably a few freckles. She's physically sturdy and almost always in worn and dusty denim pants.",
-    'background': {
-        'summary': 'First-born farm-adjacent offspring turned rural post deliverer meets old farmer in a truck after a wicked storm. They finish her deliveries for the day, bring the van to a mechanic and he lets her stay in the guest bedroom. During her stay, Kal became fast friends with Hobbs, a donkey on the farm. Months later the daughter of the farmer contacted Kal saying the farmer had taken a bad fall. Kal quickly agreed to deliver pain meds to him excited to pay back the favor and get out of the city. It also meant more time on the trails with Hobbs. The revolution slowed mail deliveries down to mostly personal letters and parcels, wellness checks, and damage reports for the city. While delivering a mysterious book from a person on her route to a library in the city, Kal was offered a part-time position with the library’s Charity Acquisition Team',
-        'more': 'https://docs.google.com/document/d/1aiQOJ-ehWwb3cNjCOqaUNep-HvE5XRw7RHSUUUzQ5Y8/edit'
-    },
+    'background': { 'summary':"Kal grew up outside of the city, and is the eldest of 3. As a young kid, spent her free time doing 4H and other outdoorsy things with her two younger siblings. \n She loves to travel and because she's pretty handy and not at all squeamish, she spent many summers WOOFing around Oregon and California with her youngest sibling, Emily, who has big dreams about getting into agricultural science in the future. \n Kal didn’t have a specific career in mind when she was browsing local job ads, and after seeing a job posting for a mail handling assistant, she started working for her local post office, which then had an opening for rural mail carrier, allowing her to take long drives through the country each week.", 'more': 'https://docs.google.com/document/d/1aiQOJ-ehWwb3cNjCOqaUNep-HvE5XRw7RHSUUUzQ5Y8' },
     'skills': [
         {
             'name': 'horseback riding',
@@ -44,15 +23,15 @@ const kal = {
     'bonds': [
         {
             'name': 'Joseph McGinty',
-            'connection': 'Adopted HeeHobs from him' 
+            'connection': 'Adopted HeeHobs from him'
         },
         {
-            'name': 'PC #1',
-            'connection': 'TBD' 
+            'name': 'Mel',
+            'connection': 'Kal started noticing aid opportunities but not knowing what to do, was referred to Mel because she has skills. Sees her as a coworker/acquaintance.'
         },
         {
-            'name': 'PC #2',
-            'connection': 'TBD' 
+            'name': 'Chadtholomew',
+            'connection': 'Chadth knows McGinty, Kal gave him a ride into town and they tried to understand music together. Kal gets along easily with him and enjoys his company.'
         }
     ],
     'relationships': [
@@ -69,8 +48,12 @@ const kal = {
             'profession': 'Mule'
         },
         {
-            'name': 'PC#1',
-            'profession': 'TBD'
+            'name': 'Mel',
+            'profession': 'Mutual Aid Coordinator(?)'
+        },
+        {
+            'name': 'Chadtholomew',
+            'profession': 'Music Man (razzle dazzle)'
         }
     ],
     'inventory': [
@@ -204,17 +187,24 @@ const anthony = {
     ]
 };
 
-function syncEls(char, el) {
-    let i = 0;
-    for (const key in char) {
-        if (el[i]) {
-            populate(el[i], char[key]);
-        } else {
-            break;
-        }
-        i++;
-    }
-       
+//elements to populate with character data
+const keys = ['charName', 'charPronouns', 'statModBody', 'statModHeart', 'statModMind', 'description'];
+const elTags = ['name-id', 'pronoun-id', 'body-mod-id', 'heart-mod-id', 'mind-mod-id', 'desc-id'];
+
+// grab ids and stuff them into vars, gently
+const description = document.getElementById('desc-id');
+const background = document.getElementById('background-id');
+
+const inventory = document.getElementById('inventory-list-id');
+const skills = document.getElementById('skill-list-id');
+const relationships = document.getElementById('relationship-list-id');
+const bonds = document.getElementById('bond-list-id');
+
+const lists = [inventory, skills, bonds, relationships];
+// const listTags = ['inventory-list-id', 'skill-list-id', 'relationship-list-id', 'bond-list-id'];
+
+function init(char) {
+    getBasicInfo(char, keys, elTags);       
     getBackground(char, background);
     clearItems(lists);
     listItems(char.inventory, inventory);
@@ -228,15 +218,15 @@ const selectList = document.getElementById('char-select');
 selectList.addEventListener('change', () => {
     switch (selectList.value) {
         case 'kal':
-            syncEls(kal, elements);            
+            init(kal);            
             break;
     
         case 'dee':
-            syncEls(dee, elements);            
+            init(dee);            
             break;
     
         case 'anthony':
-            syncEls(anthony, elements);            
+            init(anthony);            
             break;
     
         default:
