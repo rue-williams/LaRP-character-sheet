@@ -1,0 +1,76 @@
+{
+    "charName": "Kal(vin)",
+    "charPronouns": "she/they",
+    "statModBody": 1,
+    "statModHeart": 0,
+    "statModMind": 1,
+    "description": "Dark brown eyes and a crooked smile might be the first things you notice about Kal. She stands at about 5'7\", with strawberry blonde hair that's either under a hat or has at least two different kinds of organic detritus in it. Her face is stained with dirt, grass, sweat and... probably a few freckles. She's physically sturdy and almost always in worn and dusty denim pants.",
+    "background": {"summary":"Kal grew up outside of the city, and is the eldest of 3. As a young kid, spent her free time doing 4H and other outdoorsy things with her two younger siblings. \n She loves to travel and because she's pretty handy and not at all squeamish, she spent many summers WOOFing around Oregon and California with her youngest sibling, Emily, who has big dreams about getting into agricultural science in the future. \n Kal didn’t have a specific career in mind when she was browsing local job ads, and after seeing a job posting for a mail handling assistant, she started working for her local post office, which then had an opening for rural mail carrier, allowing her to take long drives through the country each week.", "more": "https://docs.google.com/document/d/1aiQOJ-ehWwb3cNjCOqaUNep-HvE5XRw7RHSUUUzQ5Y8"},
+    "skills": [
+        {
+            "name": "horseback riding",
+            "level": 1
+        },
+        {
+            "name": "Nature",
+            "level": 1
+        }
+    ],
+    "bonds": [
+        {
+            "name": "Joseph McGinty",
+            "connection": "Adopted HeeHobs from him"
+        },
+        {
+            "name": "Mel",
+            "connection": "Kal started noticing aid opportunities but not knowing what to do, was referred to Mel because she has skills. Sees her as a coworker/acquaintance."
+        },
+        {
+            "name": "Chadtholomew",
+            "connection": "Chadth knows McGinty, Kal gave him a ride into town and they tried to understand music together. Kal gets along easily with him and enjoys his company."
+        }
+    ],
+    "relationships": [
+        {
+            "name": "Joseph McGinty",
+            "relation": "farmer who towed Kal's van"
+        },
+        {
+            "name": "Sarah Keane",
+            "profession": "farmer's daughter"
+        },
+        {
+            "name": "HeeHobs",
+            "profession": "Mule"
+        },
+        {
+            "name": "Mel",
+            "profession": "Mutual Aid Coordinator(?)"
+        },
+        {
+            "name": "Chadtholomew",
+            "profession": "Music Man (razzle dazzle)"
+        }
+    ],
+    "inventory": [
+        "multi-tool",
+        "phone",
+        "backpack",
+        "100ft of rope",
+        "Saddle and pad",
+        "reins",
+        "halter",
+        "hoof pick",
+        "curry comb",
+        "brush",
+        "Food",
+        "grain",
+        "water bag (full)",
+        "sleeping bag",
+        "change of clothes",
+        "compass",
+        "Map (Oregon)",
+        "community billboard",
+        "mailbag (full)"
+    ]
+}

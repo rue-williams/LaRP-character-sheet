@@ -20,81 +20,6 @@ const elements = [charName, charPronouns, statModBody, statModHeart, statModMind
 const lists = [inventory, skills, bonds, relationships];
 
 //character objects
-const kal = {
-    'charName': 'Kal(vin)',
-    'charPronouns': 'she/they/he',
-    'statModBody': 1,
-    'statModHeart': 0,
-    'statModMind': 1,
-    'description': "Dark brown eyes and a crooked smile might be the first things you notice about Kal. She stands at about 5'7\", with strawberry blonde hair that's either under a hat or has at least two different kinds of organic detritus in it. Her face is stained with dirt, grass, sweat and... probably a few freckles. She's physically sturdy and almost always in worn and dusty denim pants.",
-    'background': {
-        'summary': 'First-born farm-adjacent offspring turned rural post deliverer meets old farmer in a truck after a wicked storm. They finish her deliveries for the day, bring the van to a mechanic and he lets her stay in the guest bedroom. During her stay, Kal became fast friends with Hobbs, a donkey on the farm. Months later the daughter of the farmer contacted Kal saying the farmer had taken a bad fall. Kal quickly agreed to deliver pain meds to him excited to pay back the favor and get out of the city. It also meant more time on the trails with Hobbs. The revolution slowed mail deliveries down to mostly personal letters and parcels, wellness checks, and damage reports for the city. While delivering a mysterious book from a person on her route to a library in the city, Kal was offered a part-time position with the library’s Charity Acquisition Team',
-        'more': 'https://docs.google.com/document/d/1aiQOJ-ehWwb3cNjCOqaUNep-HvE5XRw7RHSUUUzQ5Y8/edit'
-    },
-    'skills': [
-        {
-            'name': 'horseback riding',
-            'level': 1
-        },
-        {
-            'name': 'Nature',
-            'level': 1
-        }
-    ],
-    'bonds': [
-        {
-            'name': 'Joseph McGinty',
-            'connection': 'Adopted HeeHobs from him' 
-        },
-        {
-            'name': 'PC #1',
-            'connection': 'TBD' 
-        },
-        {
-            'name': 'PC #2',
-            'connection': 'TBD' 
-        }
-    ],
-    'relationships': [
-        {
-            'name': 'Joseph McGinty',
-            'relation': "farmer who towed Kal's van"
-        },
-        {
-            'name': 'Sarah Keane',
-            'profession': "farmer's daughter"
-        },
-        {
-            'name': 'HeeHobs',
-            'profession': 'Mule'
-        },
-        {
-            'name': 'PC#1',
-            'profession': 'TBD'
-        }
-    ],
-    'inventory': [
-        'multi-tool',
-        'phone',
-        'backpack',
-        '100ft of rope',
-        'Saddle and pad',
-        'reins',
-        'halter',
-        'hoof pick',
-        'curry comb',
-        'brush',
-        'Food',
-        'grain',
-        'water bag (full)',
-        'sleeping bag',
-        'change of clothes',
-        'compass',
-        'Map (Oregon)',
-        'community billboard',
-        'mailbag (full)'
-    ]
-};
 const dee = {
     'charName': 'Mel',
     'charPronouns': 'she/her',
@@ -228,7 +153,11 @@ const selectList = document.getElementById('char-select');
 selectList.addEventListener('change', () => {
     switch (selectList.value) {
         case 'kal':
-            syncEls(kal, elements);            
+            fetch('./assets/kalvin.json')
+                .then(res => res.json())
+                .then(kal => { 
+                    syncEls(kal, elements);
+                });          
             break;
     
         case 'dee':
