@@ -42,18 +42,19 @@ export function getBackground(char) {
 
 
 //list out character arrays
-export function listItems(arr, listElement) {
+export function listItems(arr, tag) {
+    const inv = document.getElementById(tag);
     for (let i = 0; i < arr.length; i++) {
         const newItem = document.createElement('li');
         newItem.textContent = arr[i];
-        listElement.appendChild(newItem);
+        inv.appendChild(newItem);
     }
 }
 
 //function to initalize an empty list before listing out character items
 export function clearItems(list) {
     for (let i = 0; i < list.length; i++) {
-        list[i].innerHTML = '';
+        document.getElementById(list[i]).innerHTML = '';
     }
 }
 
