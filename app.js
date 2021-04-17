@@ -44,11 +44,11 @@ selectList.addEventListener('change', () => {
             init(characters[0]);            
             break;
     
-        case 'dee':
+        case 'mel':
             init(characters[1]);            
             break;
     
-        case 'anthony':
+        case 'chadth':
             init(characters[2]);            
             break;
     
