@@ -33,7 +33,6 @@ footer select {
 }
 
 .dice-roller {
-    border: 2px solid tomato;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -42,18 +41,25 @@ footer select {
 }
 
 .dice {
-    background-color: gray;
+    background-color: lightgray;
+    color: gray;
     height: 25px;
-    width: 75px;
+    width: 60px;
     padding: 5px;
     text-align: center;
+    border-radius: 12.5px;
+    margin-bottom: 2.5px;;
 }
 
 .result {
-    width: 75px;
+    margin: auto;
+    padding: auto;
+    width: 50px;
     height: 50px;
-    font-size: 3rem;
+    font-size: 2.5rem;
     text-align: center;
+    border-radius: 25px;
+    border: 3.5px solid black;
 }
 
 .name-tag {
