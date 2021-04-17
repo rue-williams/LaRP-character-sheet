@@ -6,20 +6,28 @@ export function diceRoll(mod = 0) {
 }
 
 export function displayRoll(diceTag, rollTag, roll) {
-    document.getElementById(diceTag).innerHTML = '';
-    document.getElementById(diceTag).appendChild(renderDice(roll[0]));
-    document.getElementById(diceTag).appendChild(renderDice(roll[1]));
+    const diceOut = document.getElementById(diceTag);
+    const resultOut = document.getElementById(rollTag);
+    diceOut.innerHTML = '';
+    diceOut.appendChild(renderDice(roll[0]));
+    diceOut.appendChild(renderDice(roll[1]));
     if (roll[2] > 0) {
         const p = document.createElement('p');
         p.innerHTML = ' + ' + roll[2];
-        document.getElementById(diceTag).appendChild(p);
+        diceOut.appendChild(p);
     } else if (roll[2] < 0) {
         const p = document.createElement('p');
         p.innerHTML = ' ' + roll[2];
-        document.getElementById(diceTag).appendChild(p);
-
+        diceOut.appendChild(p);
     }
-    document.getElementById(rollTag).textContent = roll[3]; //display the roll
+    if (roll[3] >= 10) {
+        resultOut.style.color = 'green';
+    } else if (roll[3] <= 6) {
+        resultOut.style.color = 'red';
+    } else {
+        resultOut.style.color = 'black';
+    }
+    resultOut.textContent = roll[3]; //display the roll
 }
 
 function createDice() {

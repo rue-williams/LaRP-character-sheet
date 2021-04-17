@@ -57,13 +57,13 @@ selectList.addEventListener('change', () => {
     }
 });
 
-const colorSwapButton = document.getElementById('color-swap-button');
 const descHeader = document.getElementById('desc-h4-id');
 const backHeader = document.getElementById('back-h4-id');
-
 toggleClass(descHeader, description, 'hidden');
 toggleClass(backHeader, background, 'hidden');
-toggleClass(colorSwapButton, document.body, 'dark-mode');
+
+// const colorSwapButton = document.getElementById('color-swap-button');
+// toggleClass(colorSwapButton, document.body, 'dark-mode');
 
 const rollButton = document.getElementById('dice-roller-id');
 const statButtons = ['body-stat-id', 'heart-stat-id', 'mind-stat-id'];
