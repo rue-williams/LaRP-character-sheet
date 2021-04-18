@@ -8,13 +8,28 @@ export function objToArray(arr) {
     return objects;
 }
 
-export function populate(el, content) {
-    el.textContent = content;
+function flattenObj(obj) {
+    const out = [];
+    for (const key in obj) {
+        out.push(obj[key]);
+    }
+    return out[0] + ': ' + out[1];
 }
 
-export function getBackground(char, el) {
-    populate(el, char.background.summary);
+function populate(tag, content) {
+    document.getElementById(tag).textContent = content;
+}
+
+export function getBasicInfo(char, keyArray, tags) {
+    for (let i = 0; i < keyArray.length; i++) {
+        populate(tags[i], char[keyArray[i]]);        
+    }
+}
+
+export function getBackground(char) {
+    populate('background-id', char.background.summary);
     if (char.background.more) {
+        const el = document.getElementById('background-id');
         const link = document.createElement('a');
         link.href = char.background.more;
         link.textContent = 'Read More';
@@ -25,27 +40,21 @@ export function getBackground(char, el) {
     }
 }
 
-function flattenObj(obj) {
-    const out = [];
-    for (const key in obj) {
-        out.push(obj[key]);
-    }
-    return out[0] + ': ' + out[1];
-}
 
 //list out character arrays
-export function listItems(arr, listElement) {
+export function listItems(arr, tag) {
+    const inv = document.getElementById(tag);
     for (let i = 0; i < arr.length; i++) {
         const newItem = document.createElement('li');
         newItem.textContent = arr[i];
-        listElement.appendChild(newItem);
+        inv.appendChild(newItem);
     }
 }
 
 //function to initalize an empty list before listing out character items
 export function clearItems(list) {
     for (let i = 0; i < list.length; i++) {
-        list[i].innerHTML = '';
+        document.getElementById(list[i]).innerHTML = '';
     }
 }
 
