@@ -153,17 +153,17 @@
     ],
     "bonds": [
         {
-            "name": "NPC #1",
-            "connection": "TBD"
+            "name": "Kal",
+            "connection": "Kal gave a ride to Chadtholomew to the library for the first time. They often take trips into the outside world semi-regularly."
         },
         {
-            "name": "PC #1",
-            "connection": "TBD"
+            "name": "Mel",
+            "connection": "Chadtholomew looks up to Mel and desperately wants them to be his friend."
         },
         {
-            "name": "PC #2",
-            "connection": "TBD"
-        }
+            "name": "Joseph McGinty",
+            "connection": "Joseph didn't shoot Chadtholomew when he was caught rooting through is veggie garden."
+        },
     ],
     "relationships": [
         {
