@@ -11,22 +11,19 @@ export function displayRoll(diceTag, rollTag, roll) {
     diceOut.innerHTML = '';
     diceOut.appendChild(renderDice(roll[0]));
     diceOut.appendChild(renderDice(roll[1]));
-    if (roll[2] > 0) {
-        const p = document.createElement('p');
-        p.innerHTML = ' + ' + roll[2];
-        diceOut.appendChild(p);
-    } else if (roll[2] < 0) {
-        const p = document.createElement('p');
-        p.innerHTML = ' ' + roll[2];
-        diceOut.appendChild(p);
-    }
-    if (roll[3] >= 10) {
-        resultOut.style.color = 'green';
-    } else if (roll[3] <= 6) {
-        resultOut.style.color = 'red';
-    } else {
-        resultOut.style.color = 'black';
-    }
+
+    const p = document.createElement('p');
+
+    roll[2] > 0 ? 
+        p.innerHTML = ` + ${roll[2]}` 
+        : p.innerHTML = ` ${roll[2]}`;
+    
+    diceOut.appendChild(p);
+
+    if (roll[3] >= 10) resultOut.style.color = 'green'; 
+    else if (roll[3] <= 6) resultOut.style.color = 'red';
+    else resultOut.style.color = 'black';
+
     resultOut.textContent = roll[3]; //display the roll
 }
 
