@@ -33,6 +33,7 @@ footer select {
 }
 
 .dice-roller {
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -88,6 +89,7 @@ footer select {
 }
 
 .stats div {
+    cursor: pointer;
     border: 2px solid black;
     border-radius: 25px;
     padding: 5px 10px;
