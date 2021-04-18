@@ -105,7 +105,7 @@
         },
         {
             "name": "Chadtholomew",
-            "connection": "Mel knows Chad through her work with the Library, as she had a hand in connecting him to resources. They have a friendly relationship because they're both friendly people, but haven't had reason to build more closeness."
+            "connection": "Mel knows Chadth through her work with the Library, as she had a hand in connecting him to resources. They have a friendly relationship because they're both friendly people, but haven't had reason to build more closeness."
         }
     ],
     "relationships": [
@@ -123,13 +123,13 @@
         },
         {
             "name": "Chadtholomew",
-            "profession": "LARP-22 music person"
+            "profession": "LARP-22 zany music person"
         }
     ],
     "inventory": [
         "Narcan",
-        "fidget toy",
-        "journal"
+        "Fidget toy",
+        "A journal/ledger"
     ]
 },
 {
