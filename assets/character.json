@@ -90,42 +90,46 @@
             "level": 1
         },
         {
-            "name": "facial expression reading",
+            "name": "Facial expression reading",
             "level": 1
         }
     ],
     "bonds": [
         {
-            "name": "Joseph McGinty",
-            "connection": "Adopted HeeHobs from him"
+            "name": "Kal",
+            "connection": "Connected to Kal through her work with the Library; they fill similar roles and often work in similar areas. They exchange information, and have a positive acquaintance-level relationship."
         },
         {
-            "name": "PC #1",
-            "connection": "TBD"
+            "name": "Sarah Keane",
+            "connection": "The Keane family, and Sarah in particular, helped Mel by offering stable housing during her period of transition off the streets. She feels a deep loyalty to them as a result."
         },
         {
-            "name": "PC #2",
-            "connection": "TBD"
+            "name": "Chadtholomew",
+            "connection": "Mel knows Chadth through her work with the Library, as she had a hand in connecting him to resources. They have a friendly relationship because they're both friendly people, but haven't had reason to build more closeness."
         }
     ],
     "relationships": [
         {
-            "name": "NPC #1",
-            "relation": "TBD"
+            "name": "Kal",
+            "profession": "Mutual aid coordinator (?)"
         },
         {
-            "name": "PC #2",
-            "profession": "TBD"
+            "name": "Sarah Keane",
+            "profession": "Farmer's daughter"
         },
         {
-            "name": "PC #1",
-            "profession": "TBD"
+            "name": "Mars",
+            "profession": "LARP-22 assignment coordinator"
+        },
+        {
+            "name": "Chadtholomew",
+            "profession": "LARP-22 zany music person"
         }
     ],
     "inventory": [
         "Narcan",
-        "fidget toy",
-        "journal"
+        "Fidget toy",
+        "A journal/ledger"
     ]
 },
 {
