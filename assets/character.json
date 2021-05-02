@@ -12,7 +12,11 @@
             "level": 1
         },
         {
-            "name": "Nature",
+            "name": "navigation",
+            "level": 1
+        },
+        {
+            "name": "nature",
             "level": 1
         }
     ],
@@ -33,11 +37,11 @@
     "relationships": [
         {
             "name": "Joseph McGinty",
-            "relation": "farmer who towed Kal's van"
+            "relation": "Man who towed Kal's van and original owner of HeeHobs"
         },
         {
             "name": "Sarah Keane",
-            "profession": "farmer's daughter"
+            "profession": "McGinty's daughter"
         },
         {
             "name": "HeeHobs",
